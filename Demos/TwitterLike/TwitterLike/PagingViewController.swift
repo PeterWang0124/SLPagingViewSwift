@@ -12,8 +12,8 @@ class PagingViewController: SLPagingViewSwift {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let brownViewController = self.storyboard?.instantiateViewControllerWithIdentifier("BrownViewController") as UIViewController
-    let purpleViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PurpleViewController") as UIViewController
+    let brownViewController = self.storyboard?.instantiateViewControllerWithIdentifier("BrownViewController") as! UIViewController
+    let purpleViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PurpleViewController") as! UIViewController
     self.addViewControllers([brownViewController, purpleViewController])
     self.needToShowPageControl = true
     self.pagingViewMovingRedefine  = {

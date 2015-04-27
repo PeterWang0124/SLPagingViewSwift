@@ -112,7 +112,7 @@ public class SLPagingViewSwift: UIViewController, UIScrollViewDelegate {
   *  @return Instance of SLPagingViewController
   */
   init(items: [UIView], viewsOrControllers: [UIResponder], showPageControl: Bool = false, navBarBackground: UIColor = UIColor.whiteColor()) {
-    super.init()
+    super.init(nibName: nil, bundle: nil)
     needToShowPageControl = showPageControl
     navigationBarView.backgroundColor = navBarBackground
     isUserInteraction = true
@@ -209,7 +209,7 @@ public class SLPagingViewSwift: UIViewController, UIScrollViewDelegate {
   private func setup(items: [UIView], viewsOrControllers: [UIResponder]) {
     var i = 0
     for item in items {
-      var vSize: CGSize = item.isKindOfClass(UILabel.classForCoder()) ? self.getLabelSize(item as UILabel) : item.frame.size
+      var vSize: CGSize = item.isKindOfClass(UILabel.classForCoder()) ? self.getLabelSize(item as! UILabel) : item.frame.size
       var originX       = (self.view.frame.width/2.0 - vSize.width/2.0) + CGFloat(i * 100)
       item.frame           = CGRectMake(originX, 8, vSize.width, vSize.height)
       item.tag             = i

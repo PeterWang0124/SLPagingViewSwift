@@ -56,6 +56,8 @@ class DemoViewController: UIViewController {
     pagingController.tintPageControlColor = UIColor(white: 0.799, alpha: 1.0)
     pagingController.pagingViewMovingRedefine = {
       (scrollView: UIScrollView, subviews: [UIView]) -> Void in
+      println(scrollView)
+      println(subviews)
       var i = 0
       var xOffset = scrollView.contentOffset.x
       for view in subviews {
